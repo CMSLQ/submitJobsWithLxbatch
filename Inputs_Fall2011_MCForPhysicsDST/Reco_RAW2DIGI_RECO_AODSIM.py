@@ -67,7 +67,6 @@ process.source = cms.Source("PoolSource",
     'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_44_1_yRt.root',
     'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_45_1_B9L.root',
     'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_46_1_wzu.root',
-    'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_47_1_SA3.root',
     'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_47_1_UKU.root',
     'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_48_1_Ev8.root',
     'root://eoscms//eos/cms/store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650/QstarToJJ_M-500_TuneD6T_7TeV_pythia6__Fall11-PU_S6_START42_V14B-v1__GEN-RAW_49_1_SMI.root',
@@ -90,7 +89,7 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    version = cms.untracked.string('$Revision: 1.2 $'),
+    version = cms.untracked.string('$Revision: 1.3 $'),
     annotation = cms.untracked.string('Reco nevts:1'),
     name = cms.untracked.string('PyReleaseValidation')
 )
