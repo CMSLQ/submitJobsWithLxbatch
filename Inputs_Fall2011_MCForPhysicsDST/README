@@ -1,15 +1,24 @@
 ################################################
 Fall11 RECO from GEN-RAW samples
 
-release: 
+- release: 
 CMSSW_4_2_8_patch4
 
-cmsDriver command: 
+- setup area:
+cd CMSSW_4_2_8_patch4/src/
+cvs co -d CMGTools/Production/ UserCode/CMG/CMGTools/Production/
+cd CMGTools/Production/
+scram b
+cvs co -d Leptoquarks/submitJobsWithLxbatch UserCode/Leptoquarks/submitJobsWithLxbatch
+cd Leptoquarks/submitJobsWithLxbatch/Inputs_Fall2011_MCForPhysicsDST/
+cmsenv
+
+- cmsDriver command: 
 cmsDriver.py Reco --step RAW2DIGI,RECO --conditions START42_V14B::All --eventcontent AODSIM --no_exec --mc --filein root://eoscms//eos/cms/store/cmst3/user/mgouzevi/CMG/QstarToJJ_M-500_TuneD6T_7TeV_pythia6/Fall11-PU_S6_START42_V14B-v1/GEN-RAW/Francesco/E07762FA-28EA-E011-8D2A-E41F13181A48.root --fileout MC_AODSIM_Test.root --python_filename=Reco_RAW2DIGI_RECO_AODSIM.py
 
-make the input list:
+- make the input list:
 cmsLs /store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650 | grep .root | awk '{print "\047root://eoscms//eos/cms"$5"\047,"}'
 
-submit in batch:
+- submit batch:
+cmsBatch.py 50 Reco_RAW2DIGI_RECO_AODSIM.py -r /store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTplusAODSIM/PhysicsDSTplusAODSIM-MC-Fall11-QstarToJJ_20111218 -b 'bsub -q 1nd < ./batchScript.sh'
 
-./cmsBatch.py 1 Reco_RAW2DIGI_RECO_AODSIM.py -b 'bsub -q 8nm < ./batchScript.sh'
