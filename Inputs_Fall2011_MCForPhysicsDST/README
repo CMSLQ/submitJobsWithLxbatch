@@ -20,5 +20,5 @@ cmsDriver.py Reco --step RAW2DIGI,RECO --conditions START42_V14B::All --eventcon
 cmsLs /store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650 | grep .root | awk '{print "\047root://eoscms//eos/cms"$5"\047,"}'
 
 - submit batch:
-cmsBatch.py 50 Reco_RAW2DIGI_RECO_AODSIM.py -r /store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTplusAODSIM/PhysicsDSTplusAODSIM-MC-Fall11-QstarToJJ_20111218 -b 'bsub -q 1nd < ./batchScript.sh'
+cmsBatch.py 1 Reco_RAW2DIGI_RECO_AODSIM.py -r /store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTplusAODSIM/PhysicsDSTplusAODSIM-MC-Fall11-QstarToJJ_20111218 -b 'bsub -q 1nd < ./batchScript.sh'
 
