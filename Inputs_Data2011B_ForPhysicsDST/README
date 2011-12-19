@@ -1,0 +1,18 @@
+################################################
+HLT from RAW samples (Data)
+
+- release: 
+CMSSW_4_2_9_HLT3_hltpatch3
+
+- setup area:
+cd CMSSW_4_2_9_HLT3_hltpatch3/src/
+cvs co -d CMGTools/Production/ UserCode/CMG/CMGTools/Production/
+cd CMGTools/Production/
+scram b
+cvs co -d Leptoquarks/submitJobsWithLxbatch UserCode/Leptoquarks/submitJobsWithLxbatch
+cd Leptoquarks/submitJobsWithLxbatch/Inputs_Data2011B_ForPhysicsDST
+cmsenv
+
+- submit batch:
+cmsBatch.py 1 hlt_data.py -r /store/cmst3/user/santanas/DiJets/2011DataPhysicsDSTplusRAW/PhysicsDSTplusRAW-DATA-2011B-HT-180250_20111219 -b 'bsub -q 1nw < ./batchScript.sh'
+
