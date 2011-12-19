@@ -35,12 +35,12 @@ cd Leptoquarks/submitJobsWithLxbatch/Inputs_Data2011B_ForPhysicsDST
 cmsenv
 
 - cmsDriver command: 
-cmsDriver.py Reco --step RAW2DIGI,RECO --conditions START42_V14B::All --eventcontent AODSIM --no_exec --mc --filein root://eoscms//eos/cms/store/cmst3/user/mgouzevi/CMG/QstarToJJ_M-500_TuneD6T_7TeV_pythia6/Fall11-PU_S6_START42_V14B-v1/GEN-RAW/Francesco/E07762FA-28EA-E011-8D2A-E41F13181A48.root --fileout MC_AODSIM_Test.root --python_filename=Reco_RAW2DIGI_RECO_AOD.py
+cmsDriver.py promptReco --step RAW2DIGI,RECO --conditions GR_P_V22::All --eventcontent AOD --no_exec --data --filein file:/data/santanas/Data/HT-Run2011B-RAW-v1-180072-4E95B756-EE00-E111-8FB6-485B3962633D-20399events.root --fileout HT-Run2011B-AOD-test.root --python_filename=promptReco_RAW2DIGI_AOD.py
 
 - make the input list:
-cmsLs /store/cmst3/user/santanas/DiJets/Fall11MCPhysicsDSTGenInfoRAW/PhysicsDSTGenInfoRAW-MC-Fall11-QstarToJJ_20111218_145650 | grep .root | awk '{print "\047root://eoscms//eos/cms"$5"\047,"}'
+cmsLs /store/cmst3/user/santanas/DiJets/2011DataPhysicsDSTplusRAW/PhysicsDSTplusRAW-DATA-2011B-HT-180250_20111219 | grep .root | awk '{print "\047root://eoscms//eos/cms"$5"\047,"}' > list.txt
 
 - submit batch:
-cmsBatch.py 1 Reco_RAW2DIGI_RECO_AOD.py -r /store/cmst3/user/santanas/DiJets/2011DataPhysicsDSTplusAOD/PhysicsDSTplusAOD-DATA-2011B-HT-180250_20111219 -b 'bsub -q 1nw < ./batchScript.sh'
+cmsBatch.py 1 promptReco_RAW2DIGI_AOD.py -r /store/cmst3/user/santanas/DiJets/2011DataPhysicsDSTplusAOD/PhysicsDSTplusAOD-DATA-2011B-HT-180250_20111219 -b 'bsub -q 1nw < ./batchScript.sh'
 
 
