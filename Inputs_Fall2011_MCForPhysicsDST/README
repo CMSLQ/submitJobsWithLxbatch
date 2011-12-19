@@ -9,6 +9,7 @@ cd CMSSW_4_2_8_patch4/src/
 cvs co -d CMGTools/Production/ UserCode/CMG/CMGTools/Production/
 cd CMGTools/Production/
 scram b
+cd ../../
 cvs co -d Leptoquarks/submitJobsWithLxbatch UserCode/Leptoquarks/submitJobsWithLxbatch
 cd Leptoquarks/submitJobsWithLxbatch/Inputs_Fall2011_MCForPhysicsDST/
 cmsenv
